@@ -22,32 +22,66 @@ function Letter({ onContinue, LetterEndingComponent }) {
 
   const letterText = `Congratulations. You have officially unlocked a handwritten-ish internet letter from you know who.(keep scrolling, I promise it won't be too long)
 So… I was thinking about OS.
-Which is honestly dangerous because once I start thinking about us, I remember everything — the cute things, the stupid things, the fights, the laughs, the random conversations, and all the moments where I look at you and think, yeah… this idiot is mine.
-Two people who started off as just friends, with one Potterhead and one Stranger Things enthusiast, somehow ending up here, together since 21st April 2026.
-Look at us now. Somewhere between all the yapping sessions, random conversations, Maggie dates, dahi bara dates, weird dates, not-so-weird dates, fights over approximately EVERYTHING, and your legendary life updates that are somehow always crazyyyyy, you became my favourite person to do absolutely nothing and everything with.
+Which is honestly dangerous because once I start thinking about us, I remember everything — the cute things, the stupid things, the laughs, the random conversations, and all the moments where I look at you and think, yeah… this idiot is mine.
+Two people who started off as just friends,One Potterhead. One Stranger Things enthusiast. Somehow ending up here, together since 21st April 2026.
+Look at us now. Somewhere between all the yapping sessions, random conversations, Maggie dates, your legendaryyyyyy, You became my favourite person.
+
+My favourite person to talk to.
+My favourite person to annoy.
+My favourite person to tell absolutely unnecessary things to.
+
+And somehow, my favourite person to do nothing and everything with.
 I love your eyes — like, genuinely, what are those things doing? Illegal levels of pretty.
-And then there are your lips, your teeth, your face, your waist that I apparently have a personal appreciation for, and basically… yeah, technically I love the entire Girrafee package.
-I love calling you Om Pari, even though I am fully aware that you are technically a strong gay Girrafee and not a fairy princess, but let me have this.
+Who gave you permission to have eyes that pretty?
+And then there are your lips, your cheeks, your forehead, your little dances, your shoulders, your biceps that I apparently have a personal appreciation for, and basically… yeah, technically I love the entire Girrafee package.
+I love calling you Om Pari, even though I am fully aware that you are technically a strong gay Girrafee and not a fairy princess.
 I love our US yapping sessions where one conversation somehow becomes seventeen different conversations and neither of us knows how we got there.
-I love the way you care for me even when you're angry, the way you teach me something ten times when my brain has decided to leave the building, and the way you somehow turn into my personal life-lesson teacher without even trying.
-You are genuinely the GOAT, the best Girrafee, and unfortunately for you, now you are stuck with me.
-We've fought about so many things, and I'm pretty sure we've collected enough arguments to publish a whole series, but somehow we always find our way back to being idiots together.
+And then there's the way you care about me.
+
+Even when you're angry.
+
+Even when you're annoyed.
+
+Even when I'm being an absolute headache.
+
+You still somehow care.
+
+And I love how you'll explain things to me again and again when my brain has decided to temporarily uninstall itself.
+
+You're genuinely the GOAT.
+
+My best Girrafee.
+
+My professional yapper.
+
+My sports commentator.
+
+My personal life-lesson teacher.
+
+And unfortunately for you…
+
+you're stuck with me.
+
 Your obsession with saying “peak” is another phenomenon I have yet to scientifically understand, but I've accepted that this is just part of dating you.
 And then there's you getting excited about sports — which is honestly so cute.
 I love the little things, the big things, the ridiculous things, the things we probably won't remember years from now, and especially the things that somehow become our things.
 From dahi bara to Maggie, from random updates to random arguments, from teaching me things to making me laugh when I don't expect it.
 And before you get too comfortable, let me address the girl interaction department.
-You KNOW I don't like it, you KNOW it gets on my nerves, and yet somehow you still manage to test my patience.
-I am not saying you can't talk to girls, I am saying please remember who your girlfriend is before you start getting too friendly.
-I trust you, I am watching. 👀
+You KNOW it gets on my nerves, and yet somehow you still manage to test my patience. I am saying please remember who your girlfriend is before you start getting too friendly.
 And I know I haven't been perfect either.
 I've made my own mistakes, said things I shouldn't have, and we've both had our moments where we probably thought, what the hell are we even doing?
+I think that's one of my favourite things about us.
+
+We're not perfect.
+
+We've both messed up.
 But we've learned, we've grown, we've forgiven, and somehow we keep choosing each other.
 Because now it's not just you and me anymore — it's OS.
 And whatever happens, however many silly fights we have, however much we annoy each other, it's OS now, and it will forever be OS. ♡
 And if you ever forget how much I love you, just remember:
 you are my favourite Girrafee, my life-lesson teacher, my professional yapper, my sports commentator, my Om Pari…
 MY FIRST FUCKING LEGIT LOVE!
+i am here my dear boyfriend, and I will always be here for you.
 Make your family proud.`;
 
   const [displayedText, setDisplayedText] = useState("");
@@ -69,18 +103,15 @@ Make your family proud.`;
 
         const lastChar = letterText[index - 1];
 
-        // Determine base speed
-        let delay = isFastForward ? 4 : Math.floor(Math.random() * 35) + 25;
+        // Decreased base delay range (10ms - 20ms instead of 25ms - 60ms)
+        let delay = isFastForward ? 2 : Math.floor(Math.random() * 10) + 10;
 
-        // Add realistic pauses (Typewriter effect)
+        // Reduced pause durations for punctuation and thinking delays
         if (!isFastForward) {
-          // Pause on punctuation
           if ([".", ",", "!", "?", "\n"].includes(lastChar)) {
-            delay += Math.floor(Math.random() * 400) + 200; // Pause 200ms - 600ms
-          }
-          // Random middle-of-text pause (simulating thinking / typewriter pause)
-          else if (Math.random() < 0.05) {
-            delay += Math.floor(Math.random() * 700) + 300; // Pause 300ms - 1000ms
+            delay += Math.floor(Math.random() * 150) + 100; // Faster pause (100ms - 250ms)
+          } else if (Math.random() < 0.04) {
+            delay += Math.floor(Math.random() * 250) + 100; // Faster random pause (100ms - 350ms)
           }
         }
 
@@ -90,7 +121,7 @@ Make your family proud.`;
       }
     };
 
-    timerId = setTimeout(typeNextChar, isFastForward ? 4 : 30);
+    timerId = setTimeout(typeNextChar, isFastForward ? 2 : 12);
 
     return () => clearTimeout(timerId);
   }, [letterText, isFinished, isFastForward]);
