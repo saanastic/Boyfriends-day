@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
-body {
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  min-height: 100%;
+}
+
+body {
   background-color: #f7f3ed;
   overflow-x: hidden;
 }

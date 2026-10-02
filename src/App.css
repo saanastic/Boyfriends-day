@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cedarville+Cursive&family=Monsieur+La+Doulaise&family=Nothing+You+Could+Do&family=Qwitcher+Grypen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Monsieur+La+Doulaise&family=Nothing+You+Could+Do&family=Qwitcher+Grypen:wght@400;700&display=swap');
+
 @import "tailwindcss";
 
 body {
@@ -8,6 +9,7 @@ body {
   background-color: #f7f3ed;
   overflow-x: hidden;
 }
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -19,9 +21,17 @@ body {
     transform: translateY(0);
   }
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-fade-in {
